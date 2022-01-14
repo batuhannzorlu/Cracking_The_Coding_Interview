@@ -355,12 +355,13 @@ int main()
     Node<int>* forth = new Node<int>(2);
     Node<int>* fifth = new Node<int>(1);
    
-    
-    //root->next = second;
-    //root->next->next = third;
-    //root->next->next->next = forth;
-    //root->next->next->next->next = fifth;
 
+    
+    root->next = second;
+    root->next->next = third;
+    root->next->next->next = forth;
+    root->next->next->next->next = fifth;
+    Ispalindromelist(root);
 
     //Node<int>* root1 = new Node<int>(1);
     //Node<int>* second1 = new Node<int>(2);
@@ -404,7 +405,11 @@ int main()
    delete third;
    delete forth;
    delete fifth;
-   
+   root = nullptr;
+   second = nullptr;
+   third = nullptr;
+   forth = nullptr;
+   fifth = nullptr;
    _CrtDumpMemoryLeaks();
 
 }
