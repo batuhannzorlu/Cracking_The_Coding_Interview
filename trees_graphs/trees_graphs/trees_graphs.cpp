@@ -371,15 +371,7 @@ binary_tree_node* create_arr_fromBST(binary_tree_node* root, vector<int>& arr) {
 bool IsBSTv2(binary_tree_node* root, vector<int> arr) {
 
 	create_arr_fromBST(root, arr);
-
-	for (size_t i = 0; i < arr.size(); i++)
-	{
-		for (size_t j = i; j < arr.size(); j++) {
-			if (arr[i] <= !arr[j])
-				return false;
-		}
-	}
-	return true;
+	return std::is_sorted(arr.begin(), arr.end());
 }
 
 
@@ -518,7 +510,7 @@ struct graphNode {
 // Driver code
 int main()
 {
-
+	
 
 	//
 
@@ -545,8 +537,13 @@ int main()
 	//cout << root->left->right->right->val << endl;;
 	//cout << root2->val;
  /*   cout << check_subtree(root,root2);*/
-	binary_tree_node* root3_t = root3;
-	traverse_and_swap(root3, root3_t);
+
+
+	//binary_tree_node* root3_t = root3;
+	//traverse_and_swap(root3, root3_t);
+
+
+
 	//BSTSequence(root);
 /*    tree_traversal(root);*/
 
@@ -605,8 +602,8 @@ int main()
 		 bool x = true;
 
 		 cout << IsBST(head) << endl;*/
-		 /* vector<int> x;*/
-		 /* cout<<IsBSTv2(root,x)<<endl;*/
+		  vector<int> x;
+		  cout<<IsBSTv2(root,x)<<endl;
 		//cout << "" << endl;
 		//tree_traversal(rootv2);
 		//cout << "" << endl;
